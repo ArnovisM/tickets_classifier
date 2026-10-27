@@ -1,0 +1,1 @@
+My mouse cursor jumps around the screen and sometimes stops responding. I tried a different USB port, but the issue continues.

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+env/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Pytest / Cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE / Editores
+.vscode/
+.idea/
+*.swp

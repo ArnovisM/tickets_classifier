@@ -1,0 +1,1 @@
+SAP crashes every time I open transaction ME21N. I have restarted the application, but the same error keeps appearing.

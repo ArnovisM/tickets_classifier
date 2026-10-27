@@ -1,0 +1,1 @@
+I am unable to open a document because the system says it is encrypted and I do not have the required credentials.

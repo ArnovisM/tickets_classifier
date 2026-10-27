@@ -1,0 +1,1 @@
+My external monitor says 'No signal' even though it is plugged into the docking station and the laptop detects the device.

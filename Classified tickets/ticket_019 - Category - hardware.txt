@@ -1,0 +1,1 @@
+My laptop battery drains from 100% to 10% in less than thirty minutes, even when I am only using a browser.

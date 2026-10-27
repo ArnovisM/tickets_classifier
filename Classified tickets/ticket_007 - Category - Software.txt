@@ -1,0 +1,1 @@
+Microsoft Excel closes unexpectedly whenever I open the monthly reporting spreadsheet.

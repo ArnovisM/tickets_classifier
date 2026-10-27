@@ -1,0 +1,1 @@
+After the latest update, Outlook opens but gets stuck on the loading profile screen and never displays my inbox.

@@ -1,0 +1,1 @@
+A shared network drive disappeared from File Explorer this morning. I am connected to the company network, but the drive is missing.
