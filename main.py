@@ -12,8 +12,19 @@ def move_ticket(source, destination):
     try:
         shutil.move(str(source), str(destination))
         print(f"File moved succesfully, new location is: {str(destination)}")
+        return True
     except PermissionError as error:
         print(f"File could not be moved, error: {error}")
+        return False
+
+def move_ticket_to_error(file, error_folder):
+    destination = error_folder / file.name
+    moved = move_ticket(file, destination)
+
+    if moved:
+        print("File moved due to error, please review")
+    else:
+        print("Tried to move file due to error, action not performed, it is in original folder, please review")
 
 
 def process_single_ticket(file, classified_folder, error_folder):
@@ -26,18 +37,20 @@ def process_single_ticket(file, classified_folder, error_folder):
             if category != "Category not defined":
                 print(f"The category for ticket {file} is {category}")
                 new_filename = f"{file.stem} - Category - {category}{file.suffix}"
-                destination = classified_folder / new_filename
-                move_ticket(file, destination)
+                moved = move_ticket(file, destination)
+                if moved:
+                    print("Transaction succesfull, moving to next ticket")
+                else:
+                    print("Transaction not succesfull, leaving ticket on same folder for review")
             else:
                 print(f"Error classifing ticket: {file.name}")
                 destination = error_folder / file.name
-                move_ticket(file, destination)
+                move_ticket_to_error(file, error_folder)
         except APITimeoutError as error:
             print(f"Error with API: {error}")
     else:
         print("Error: content is empty")
-        destination = error_folder / file.name
-        move_ticket(file, destination)
+        move_ticket_to_error(file, error_folder)
 
 
 def process_tickets(
